@@ -1,0 +1,50 @@
+# Exported from Render on 2025-02-27T21:03:33Z
+services:
+- type: web
+  name: n8n-render-bl
+  runtime: node
+  repo: https://github.com/benlangham/n8n-render-bl
+  plan: starter
+  envVars:
+  - key: TZ
+    sync: false
+  - key: GENERIC_TIMEZONE
+    sync: false
+  - key: DB_TYPE
+    sync: false
+  - key: DB_POSTGRESDB_USER
+    sync: false
+  - key: DB_POSTGRESDB_SCHEMA
+    sync: false
+  - key: DB_POSTGRESDB_PORT
+    sync: false
+  - key: DB_POSTGRESDB_PASSWORD
+    sync: false
+  - key: DB_POSTGRESDB_HOST
+    sync: false
+  - key: DB_POSTGRESDB_DATABASE
+    sync: false
+  - key: WEBHOOK_URL
+    sync: false
+  - key: NODE_VERSION
+    sync: false
+  - key: N8N_USER_FOLDER
+    sync: false
+  - key: N8N_PROTOCOL
+    sync: false
+  - key: N8N_PORT
+    sync: false
+  - key: N8N_HOST
+    sync: false
+  - key: N8N_ENCRYPTION_KEY
+    sync: false
+  - key: N8N_EDITOR_BASE_URL
+    sync: false
+  region: frankfurt
+  buildCommand: pnpm install --frozen-lockfile; pnpm run build
+  startCommand: pnpm run start
+  disk:
+    name: disk
+    mountPath: /opt/render/.n8n
+    sizeGB: 1
+version: "1"
